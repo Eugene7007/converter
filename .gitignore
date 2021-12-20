@@ -1,0 +1,9 @@
+# gradle config
+.gradle
+
+# project binaries
+/build
+
+# intellij
+.idea
+*.iml

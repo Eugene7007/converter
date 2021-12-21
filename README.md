@@ -1,4 +1,3 @@
-#Converter
+#Converting Numbers to String
 
-##Convert numbers to string
-###10000 = o'n ming so'm 
+##Convert numbers to string in Uzbek

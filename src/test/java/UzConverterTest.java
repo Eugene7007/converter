@@ -1,15 +1,18 @@
+import lang.Converter;
+import lang.uz.UzConverter;
+import lang.uz.UzNumberValues;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ConverterTest {
+class UzConverterTest {
 
-  private final Converter converter = new Converter();
+  private final Converter converter = new UzConverter(new UzNumberValues());
 
   @Test
-  void test() {
+  void testIntegerNumbers() {
     BigDecimal value1 = BigDecimal.valueOf(1);
     BigDecimal value2 = BigDecimal.valueOf(2);
     BigDecimal value10 = BigDecimal.valueOf(10);
@@ -44,5 +47,11 @@ class ConverterTest {
     assertEquals(converter.convert(value1000000000), "bir milliard so'm");
   }
 
+  @Test
+  void testDecimalNumbers() {
+    BigDecimal value1 = BigDecimal.valueOf(100.12);
+    assertEquals(converter.convert(value1), "bir yuz so'm o'n ikki tiyin");
+
+  }
 
 }

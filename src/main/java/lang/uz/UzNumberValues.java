@@ -1,7 +1,11 @@
+package lang.uz;
+
+import lang.NumberValues;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class UzNumberValues {
+public class UzNumberValues implements NumberValues {
   private static final Map<Long, String> currency = new HashMap<>();
 
   public UzNumberValues() {
@@ -30,6 +34,7 @@ public class UzNumberValues {
     currency.put(1000000000000L, "trillion");
   }
 
+  @Override
   public String getStringPresentation(Long number) {
     return currency.getOrDefault(number, "");
   }

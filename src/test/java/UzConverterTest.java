@@ -29,28 +29,28 @@ class UzConverterTest {
     BigDecimal value1000000 = BigDecimal.valueOf(1_000_000);
     BigDecimal value1000000000 = BigDecimal.valueOf(1_000_000_000);
 
-    assertEquals(converter.convert(value1), "bir so'm");
-    assertEquals(converter.convert(value2), "ikki so'm");
+    assertEquals("bir so'm", converter.convert(value1));
+    assertEquals("ikki so'm", converter.convert(value2));
 
-    assertEquals(converter.convert(value10), "o'n so'm");
-    assertEquals(converter.convert(value11), "o'n bir so'm");
-    assertEquals(converter.convert(value20), "yigirma so'm");
-    assertEquals(converter.convert(value21), "yigirma bir so'm");
-    assertEquals(converter.convert(value100), "bir yuz so'm");
-    assertEquals(converter.convert(value101), "bir yuz bir so'm");
-    assertEquals(converter.convert(value200), "ikki yuz so'm");
-    assertEquals(converter.convert(value999), "to'qqiz yuz to'qson to'qqiz so'm");
-    assertEquals(converter.convert(value1000), "bir ming so'm");
-    assertEquals(converter.convert(value10000), "o'n ming so'm");
-    assertEquals(converter.convert(value100000), "bir yuz ming so'm");
-    assertEquals(converter.convert(value1000000), "bir million so'm");
-    assertEquals(converter.convert(value1000000000), "bir milliard so'm");
+    assertEquals("o'n so'm", converter.convert(value10));
+    assertEquals("o'n bir so'm", converter.convert(value11));
+    assertEquals("yigirma so'm", converter.convert(value20));
+    assertEquals("yigirma bir so'm", converter.convert(value21));
+    assertEquals("bir yuz so'm", converter.convert(value100));
+    assertEquals("bir yuz bir so'm", converter.convert(value101));
+    assertEquals("ikki yuz so'm", converter.convert(value200));
+    assertEquals("to'qqiz yuz to'qson to'qqiz so'm", converter.convert(value999));
+    assertEquals("bir ming so'm", converter.convert(value1000));
+    assertEquals("o'n ming so'm", converter.convert(value10000));
+    assertEquals("bir yuz ming so'm", converter.convert(value100000));
+    assertEquals("bir million so'm", converter.convert(value1000000));
+    assertEquals("bir milliard so'm", converter.convert(value1000000000));
   }
 
   @Test
   void testDecimalNumbers() {
     BigDecimal value1 = BigDecimal.valueOf(100.12);
-    assertEquals(converter.convert(value1), "bir yuz so'm o'n ikki tiyin");
+    assertEquals("bir yuz so'm o'n ikki tiyin", converter.convertWithFractionalPart(value1));
 
   }
 

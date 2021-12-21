@@ -11,6 +11,7 @@ public abstract class Converter {
   }
 
   public abstract String convert(BigDecimal number);
+  public abstract String convertWithFractionalPart(BigDecimal number);
 
   public NumberValues getNumberValues() {
     return numberValues;

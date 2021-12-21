@@ -28,6 +28,11 @@ public class UzConverter extends Converter {
 
   @Override
   public String convert(BigDecimal number) {
+    return convertIntegerPart(number);
+  }
+
+  @Override
+  public String convertWithFractionalPart(BigDecimal number) {
     return String.join(" ",convertIntegerPart(number), convertFractionalPart(number));
   }
 
@@ -36,7 +41,6 @@ public class UzConverter extends Converter {
     if (value == 0)
       return "";
 
-    String convertingNum = "";
     StringBuilder result = new StringBuilder();
     Iterator<Long> chunks = makeChunks(value);
     Iterator<NumOrders> orders = makeOrders(value);
@@ -45,13 +49,11 @@ public class UzConverter extends Converter {
       Long num = chunks.next();
 
       if (oneNumRange.contains(num))
-        convertingNum = convertUnitsToString(num);
+        result.append(convertUnitsToString(num));
       else if (twoNumRange.contains(num))
-        convertingNum = convertTensToString(num);
+        result.append(convertTensToString(num));
       else if (threeNumRange.contains(num))
-        convertingNum = convertHundredsToString(num);
-
-      result.append(convertingNum);
+        result.append(convertHundredsToString(num));
 
       if (num > 0)
         result.append(orders.next().getName());

@@ -24,10 +24,11 @@ class UzConverterTest {
     BigDecimal value200 = BigDecimal.valueOf(200);
     BigDecimal value999 = BigDecimal.valueOf(999);
     BigDecimal value1000 = BigDecimal.valueOf(1000);
-    BigDecimal value10000 = BigDecimal.valueOf(10_000);
-    BigDecimal value100000 = BigDecimal.valueOf(100_000);
-    BigDecimal value1000000 = BigDecimal.valueOf(1_000_000);
-    BigDecimal value1000000000 = BigDecimal.valueOf(1_000_000_000);
+    BigDecimal value10_000 = BigDecimal.valueOf(10_000);
+    BigDecimal value100_000 = BigDecimal.valueOf(100_000);
+    BigDecimal value1_000_000 = BigDecimal.valueOf(1_000_000);
+    BigDecimal value1_000_000_000 = BigDecimal.valueOf(1_000_000_000);
+    BigDecimal value1_189_190_235 = BigDecimal.valueOf(1_189_190_235);
 
     assertEquals("bir so'm", converter.convert(value1));
     assertEquals("ikki so'm", converter.convert(value2));
@@ -41,17 +42,16 @@ class UzConverterTest {
     assertEquals("ikki yuz so'm", converter.convert(value200));
     assertEquals("to'qqiz yuz to'qson to'qqiz so'm", converter.convert(value999));
     assertEquals("bir ming so'm", converter.convert(value1000));
-    assertEquals("o'n ming so'm", converter.convert(value10000));
-    assertEquals("bir yuz ming so'm", converter.convert(value100000));
-    assertEquals("bir million so'm", converter.convert(value1000000));
-    assertEquals("bir milliard so'm", converter.convert(value1000000000));
+    assertEquals("o'n ming so'm", converter.convert(value10_000));
+    assertEquals("bir yuz ming so'm", converter.convert(value100_000));
+    assertEquals("bir million so'm", converter.convert(value1_000_000));
+    assertEquals("bir milliard so'm", converter.convert(value1_000_000_000));
+    assertEquals("bir milliard bir yuz sakson to'qqiz million bir yuz to'qson ming ikki yuz o'ttiz besh so'm", converter.convert(value1_189_190_235));
   }
 
   @Test
   void testDecimalNumbers() {
     BigDecimal value1 = BigDecimal.valueOf(100.12);
     assertEquals("bir yuz so'm o'n ikki tiyin", converter.convertWithFractionalPart(value1));
-
   }
-
 }

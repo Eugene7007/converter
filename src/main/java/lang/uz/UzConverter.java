@@ -64,7 +64,11 @@ public class UzConverter extends Converter {
   }
 
   private String convertFractionalPart(BigDecimal number) {
-    long value = number.remainder(BigDecimal.ONE).multiply(new BigDecimal(HUNDRED_SEPARATION.getValue())).longValue();
+    long value = number
+      .remainder(BigDecimal.ONE)
+      .multiply(new BigDecimal(HUNDRED_SEPARATION.getValue()))
+      .longValue();
+
     if (value == 0 || value > 99)
       return "";
 

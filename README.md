@@ -1,3 +1,1 @@
-#Converting Numbers to String
-
-##Convert numbers to string in Uzbek
+## Convert numbers to string in Uzbek(Latin)

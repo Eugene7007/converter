@@ -16,5 +16,4 @@ public abstract class Converter {
   public NumberValues getNumberValues() {
     return numberValues;
   }
-  
 }
